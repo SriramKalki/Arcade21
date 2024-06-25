@@ -9,15 +9,13 @@
 <body>
   <div class="container">
     <h1>Vote for Your Favorite Option</h1>
-    <div class="options">
-      <button id="voteOptionA">Vote for Option A</button>
-      <button id="voteOptionB">Vote for Option B</button>
+    <div class="add-option">
+      <input type="text" id="newOption" placeholder="New Option">
+      <button id="addOption">Add Option</button>
     </div>
+    <div class="options" id="options"></div>
     <h2>Results</h2>
-    <div class="results">
-      <p>Option A: <span id="votesOptionA">0</span></p>
-      <p>Option B: <span id="votesOptionB">0</span></p>
-    </div>
+    <div class="results" id="results"></div>
   </div>
   <script src="app.js"></script>
 </body>
