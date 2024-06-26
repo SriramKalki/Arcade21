@@ -38,6 +38,8 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  display: block;
+  margin: 10px auto;
 }
 
 button:hover {
@@ -46,4 +48,18 @@ button:hover {
 
 .results {
   margin-top: 20px;
+}
+
+.progress-bar {
+  background-color: #007BFF;
+  height: 20px;
+  border-radius: 5px;
+  color: #fff;
+  text-align: center;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.option-container {
+  margin-bottom: 10px;
 }

@@ -10,6 +10,7 @@ const wss = new WebSocket.Server({ server });
 const port = 3000;
 
 let votes = {};
+let totalVotes = 0;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -24,6 +25,7 @@ wss.on('connection', (ws) => {
         votes[data.option] = 0;
       }
       votes[data.option] += 1;
+      totalVotes += 1;
     } else if (data.type === 'addOption') {
       if (!votes[data.option]) {
         votes[data.option] = 0;
@@ -32,7 +34,7 @@ wss.on('connection', (ws) => {
 
     wss.clients.forEach((client) => {
       if (client.readyState === WebSocket.OPEN) {
-        client.send(JSON.stringify(votes));
+        client.send(JSON.stringify({ votes, totalVotes }));
       }
     });
   });
